@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app_postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: 'backend'
+      POSTGRES_PASSWORD: 'mypass'
+    ports:
+      - 5432:5432
