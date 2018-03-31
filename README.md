@@ -1,6 +1,6 @@
-#Api with Echo + gorm
+# Api with Echo + gorm
 
-##Configs
+## Configs
 Describe with struct your config for project.
 
 ```go
@@ -67,7 +67,7 @@ func (u *User) SetPassword() {
 }
 ```
 
-##Models
+## Models
 Contains the data structures used for communication between different layers, using gorm.
 
 ```go
@@ -80,7 +80,7 @@ type User struct {
 }
 ```
 
-##Repositories
+## Repositories
 Using pattern repository for separated the logic.
 
 The base Repository{} has a somes function common like a:
@@ -114,7 +114,7 @@ func (ur *UserRepository) FindByCredentials(user *models.User) bool {
 
 ```
 
-##Resources
+## Resources
 contains the API layer that wires up the HTTP routes with the corresponding service APIs.
 
 ```go
@@ -124,7 +124,7 @@ func (uc *UserController) Register(c echo.Context) error {...}
 func (uc *UserController) Login(c echo.Context) error {...}
 ```
 
-##Routes
+## Routes
 Register your routes of resources in base.go
 ```go
 func Init(e *echo.Echo) {
@@ -144,7 +144,7 @@ func RegisterUser(e *echo.Echo) {
 }
 ```
 
-##Midlewares 
+## Midlewares 
 Put here your custom middlewares.
 
 We create middleware for put DB to context.
@@ -161,10 +161,10 @@ func DBMiddleware(db *gorm.DB) echo.MiddlewareFunc {
 }
 ```
 
-##Databases
+## Databases
 
 Manage connection and logic for dbs.
 
-##Helpers
+## Helpers
 
 Put here your helpers functions. 
