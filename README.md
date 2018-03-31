@@ -81,9 +81,9 @@ type User struct {
 ```
 
 ## Repositories
-Using pattern repository for separated the logic.
+Using repository pattern for separated the logic.
 
-The base Repository{} has a somes function common like a:
+The base Repository{} has functions common like:
 
 ```go
 
@@ -93,7 +93,7 @@ func (r *Repository) Save(model interface{}) bool { ... }
 
 ```
 
-You can create new repo that inherent of this.
+You can create new repo that inherit of this.
 
 ```go
 type UserRepository struct {
@@ -125,14 +125,14 @@ func (uc *UserController) Login(c echo.Context) error {...}
 ```
 
 ## Routes
-Register your routes of resources in base.go
+Register your in routes/base.go
 ```go
 func Init(e *echo.Echo) {
 	RegisterUser(e)
 }
 ```
 
-describe routes for entity
+describes routes for your resources.
 
 ```go
 func RegisterUser(e *echo.Echo) {
